@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"image"
 	"image/draw"
-    _ "image/png"
+	_ "image/png"
 	"log"
 	"os"
 	"runtime"
@@ -15,8 +15,10 @@ import (
 	"github.com/go-gl/mathgl/mgl32"
 )
 
-const windowWidth = 640
-const windowHeight = 480
+const (
+	windowWidth  = 640
+	windowHeight = 480
+)
 
 var vertexShader = `
     #version 330
@@ -51,7 +53,7 @@ var fragmentShader = `
     ` + "\x00"
 
 var cubeVertices = []float32{
-	//X, Y, Z, U, V
+	// X, Y, Z, U, V
 
 	// Bottom
 	-1.0, -1.0, -1.0, 0.0, 0.0,
@@ -126,7 +128,7 @@ func main() {
 
 	window.MakeContextCurrent()
 
-	//Initialize GLOW
+	// Initialize GLOW
 	if err := gl.Init(); err != nil {
 		panic(err)
 	}
